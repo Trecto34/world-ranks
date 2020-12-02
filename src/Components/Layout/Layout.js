@@ -3,7 +3,6 @@ import styles from "./Layout.module.css";
 import Link from "next/link";
 import { Brightness6Rounded } from "@material-ui/icons";
 import React, { useState, useEffect } from "react";
-import { light } from "@material-ui/core/styles/createPalette";
 
 const Layout = ({ children }) => {
   const [theme, setTheme] = useState("ligth");
@@ -14,7 +13,7 @@ const Layout = ({ children }) => {
       localStorage.getItem("theme")
     );
 
-    saveTheme();
+    setTheme(localStorage.getItem("theme"));
   }, []);
 
   const switchTheme = () => {
